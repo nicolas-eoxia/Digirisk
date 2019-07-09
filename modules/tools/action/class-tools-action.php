@@ -39,11 +39,11 @@ class Tools_Action {
 	 * @since 6.0.0
 	 */
 	public function admin_menu() {
-		$digirisk_core = get_option( \eoxia\Config_Util::$init['digirisk']->core_option );
+		// $digirisk_core = get_option( \eoxia\Config_Util::$init['digirisk']->core_option );
 
-		if ( ! empty( $digirisk_core['installed'] ) ) {
+		// if ( ! empty( $digirisk_core['installed'] ) ) {
 			add_management_page( 'DigiRisk', 'DigiRisk', 'manage_digirisk', 'digirisk-tools', array( $this, 'add_management_page' ) );
-		}
+		// }
 	}
 
 	/**
