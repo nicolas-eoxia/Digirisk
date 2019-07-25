@@ -27,13 +27,9 @@ class Handle_Model_Class extends \eoxia\Singleton_Util {
 	 * @var array
 	 */
 	private $list_type_document = array(
-		'duer'                    			=> array(
+		'duer'                               => array(
 			'title' => 'Document unique',
 			'class' => '\digi\DUER_Class',
-		),
-		'duer_mu'                            => array(
-			'title' => 'Document unique Mu',
-			'class' => '\digirisk_dashboard\DUER_Class',
 		),
 		'sheet_groupment'                    => array(
 			'title' => 'Groupement',

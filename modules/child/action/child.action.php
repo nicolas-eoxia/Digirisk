@@ -80,6 +80,7 @@ class Child_Action {
 
 	public function callback_register_site( \WP_REST_Request $request ) {
 		$check_fields = array(
+			'id'         => 'intval',
 			'url_parent' => 'esc_url_raw',
 			'url'        => 'esc_url_raw',
 			'unique_key' => 'sanitize_text_field',
@@ -102,7 +103,7 @@ class Child_Action {
 
 		$already_exist = false;
 
-		if ( ! empty( $sites ) ) {
+		if ( ! empty( $sites ) && empty( $data['id'] ) ) {
 			foreach ( $sites as $id => $site ) {
 				if ( $data['url_parent'] == $site['url_parent'] ) {
 					$already_exist = true;

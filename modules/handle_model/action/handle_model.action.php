@@ -45,6 +45,8 @@ class Handle_Model_Action {
 			wp_send_json_error();
 		}
 
+		do_action( 'digirisk_set_model', $type, $file_id, $file_path );
+
 		ob_start();
 		do_shortcode( '[digi-handle-model]' );
 		wp_send_json_success( array(

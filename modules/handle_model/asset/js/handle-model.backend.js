@@ -94,7 +94,11 @@ window.eoxiaJS.digirisk.handleModel.associateFile = function() {
 	window.eoxiaJS.loader.display( window.eoxiaJS.digirisk.handleModel.currentButton );
 
 	jQuery.post( window.ajaxurl, data, function( response ) {
-		jQuery( '#digi-handle-model' ).html( response.data.view );
+		if ( response.data.dashboard ) {
+			window.eoxiaJS.digirisk.handleModel.currentButton.closest( '.digi-tools-main-container' ).html( response.data.view );
+		} else {
+			jQuery( '#digi-handle-model' ).html( response.data.view );
+		}
 	} );
 };
 
